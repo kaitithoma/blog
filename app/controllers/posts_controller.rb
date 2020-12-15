@@ -4,6 +4,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+    user = User.create(id: 1, first_name: 'Kaiti', last_name: 'Thoma', created_at: Date.today, updated_at: Date.today)
+    Post.create(id: 1, title: 'super post', body: 'super body', created_at: Date.today, updated_at: Date.today, user_id: user.id)
     @posts = Post.all
   end
 
