@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
   def create
     user = User.create(id: 1, first_name: 'Kaiti', last_name: 'Thoma', created_at: Date.today, updated_at: Date.today)
     post = Post.create(id: 1, title: 'super post', body: 'super body', created_at: Date.today, updated_at: Date.today, user_id: user.id)
-    @comment = Comment.new(id: 1, post_id: post.id, body: 'comment body', created_at: Date.today, updated_at: Date.today, user_id: user.id)
+    @comment = Comment.new(id: 1, post_id: post.id, body: 'comment body', created_at: Date.today, updated_at: Date.today, user_id: 1)
 
     respond_to do |format|
       if @comment.save
