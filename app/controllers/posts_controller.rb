@@ -24,7 +24,8 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(id: 1, title: 'super post', body: 'super body', created_at: Date.today, updated_at: Date.today)
+    user = User.create(id: 1, first_name: 'Kaiti', last_name: 'Thoma', created_at: Date.today, updated_at: Date.today)
+    @post = Post.new(id: 1, title: 'super post', body: 'super body', created_at: Date.today, updated_at: Date.today, user_id: user.id)
 
     respond_to do |format|
       if @post.save
