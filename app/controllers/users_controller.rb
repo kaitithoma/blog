@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    User.create(id: 1, first_name: 'Kaiti', last_name: 'Thoma', created_at: Date.today, updated_at: Date.today)
     @users = User.all
   end
 
